@@ -1,0 +1,36 @@
+﻿<p class="alert alert-primary display-3 text-center">Ujjyani Co. Op. Hos. Soc</p>
+
+
+<table class="table table-bordered bg-success">
+    <tr>
+        <th>Flat No</th>
+        <th>Flat Owner</th>
+        <th>Wing</th>
+        <th>Mobile</th>
+        <th>Email</th>
+        <th>Aadhar</th>
+    </tr>
+    @foreach(var item in ViewData["Flats"] as IEnumerable<Flat>)
+    {
+        <tr>
+            <td>
+                @item.FlatNo
+            </td>
+            <td>
+                @item.FlatOwner
+            </td>
+            <td>
+                @item.Wing
+            </td>
+            <td>
+                @item.Mobile
+            </td>
+            <td>
+                @item.Email
+            </td>
+            <td>
+                @item.Aadhar
+            </td>
+        </tr>
+    }
+</table>
