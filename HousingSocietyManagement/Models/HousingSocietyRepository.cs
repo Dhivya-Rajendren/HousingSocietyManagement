@@ -18,5 +18,10 @@
         {
             return flats;
         }
+
+        public void AddNewFlat(Flat flat)
+        {
+            flats.Add(flat);
+        }
     }
 }

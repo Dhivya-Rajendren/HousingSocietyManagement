@@ -5,5 +5,7 @@
         List<Flat> GetFlats();
         Flat GetFlatById(int flatNo);
 
+        void AddNewFlat(Flat flat);
+
     }
 }

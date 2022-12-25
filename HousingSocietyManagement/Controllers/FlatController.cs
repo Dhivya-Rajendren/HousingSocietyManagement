@@ -8,17 +8,7 @@ namespace HousingSocietyManagement.Controllers
         HousingSocietyRepository repo;
         public IActionResult  Index()
         {
-            Flat flat = new Flat();
-            flat.FlatNo = 3;
-            flat.FlatName = "A-3";
-            flat.FlatOwner = "John";
-            flat.Mobile = 7412589635;
-            flat.Wing = "A";
-            flat.Aadhar = 1236457896325874;
-            flat.Email = "John@hotmail.com";
             repo = new HousingSocietyRepository();
-            repo.GetFlats().Add(flat);
-
             return View(repo.GetFlats());
         }
 
@@ -29,7 +19,19 @@ namespace HousingSocietyManagement.Controllers
             return View(flat);
         }
 
+        //Incoming Get Request 
+        public IActionResult CreateFlat()
+        {
+            return View();
+        }
        
+        [HttpPost]
+        public IActionResult CreateFlat(Flat flat)
+        {
+            repo = new HousingSocietyRepository();
+            repo.AddNewFlat(flat);
+            return RedirectToAction("Index");
+        }
 
     }
 }
