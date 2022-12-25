@@ -3,7 +3,7 @@
     public interface IHousingSociety
     {
         List<Flat> GetFlats();
-        Flat GetFlatById();
+        Flat GetFlatById(int flatNo);
 
     }
 }

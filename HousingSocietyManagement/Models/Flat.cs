@@ -3,6 +3,7 @@
     public class Flat
     {
         public int FlatNo { get; set; }
+        public string FlatName { get; set; }
         public string FlatOwner { get; set; }
 
         public string Wing { get; set; }

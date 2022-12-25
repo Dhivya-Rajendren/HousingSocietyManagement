@@ -1,36 +1,31 @@
-﻿<p class="alert alert-primary display-3">Ujjyani Co. Op. Hos. Soc</p>
+﻿@model IEnumerable<HousingSocietyManagement.Models.Flat>
 
 
-<table class="table table-bordered">
-    <tr>
-        <th>Flat No</th>
+<p class="alert alert-danger display-3 text-center">Ujjyani Co. Op. Hos. Soc</p>
+<div class="text-center m-5">
+<table class="table table-bordered bg-info w-25" >
+    <tr class="text-white">
+     <th>FlatName</th>
         <th>Flat Owner</th>
-        <th>Wing</th>
+        
         <th>Mobile</th>
-        <th>Email</th>
-        <th>Aadhar</th>
+        
     </tr>
-    @foreach(var item in ViewBag.Flats)
+    @foreach(var item in Model)
     {
-        <tr>
+        <tr class="text-white">
             <td>
-                @item.FlatNo
+             <a asp-action="GetFlatDetails" asp-controller="Flat" asp-route-flatNo=@item.FlatNo>  @item.FlatName</a> 
             </td>
             <td>
                 @item.FlatOwner
             </td>
-            <td>
-                @item.Wing
-            </td>
+          
             <td>
                 @item.Mobile
             </td>
-            <td>
-                @item.Email
-            </td>
-            <td>
-                @item.Aadhar
-            </td>
+           
         </tr>
     }
 </table>
+</div>

@@ -8,29 +8,9 @@ namespace HousingSocietyManagement.Controllers
         HousingSocietyRepository repo;
         public IActionResult  Index()
         {
-            repo = new HousingSocietyRepository(); 
-            ViewBag.Flats = repo.GetFlats();
-
-
-           return View();
-        }
-
-        public IActionResult GetFlats()
-        {
-            //Dictionary is a Key-Value pair of collections
-            //"Flat" is the Key
-
-            //flats list is the value
-            repo = new HousingSocietyRepository();
-
-            ViewData["Flats"] = repo.GetFlats();
-            return View();
-        }
-
-        public IActionResult AllFlats()
-        {
             Flat flat = new Flat();
             flat.FlatNo = 3;
+            flat.FlatName = "A-3";
             flat.FlatOwner = "John";
             flat.Mobile = 7412589635;
             flat.Wing = "A";
@@ -42,6 +22,14 @@ namespace HousingSocietyManagement.Controllers
             return View(repo.GetFlats());
         }
 
-      
+        public IActionResult GetFlatDetails(int flatNo)
+        {
+            repo = new HousingSocietyRepository();
+          Flat flat=  repo.GetFlatById(flatNo);
+            return View(flat);
+        }
+
+       
+
     }
 }
