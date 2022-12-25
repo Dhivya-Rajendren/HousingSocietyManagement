@@ -1,0 +1,43 @@
+MVC - Controller -Flat
+
+Model - All the Domain classes , entity classes or Data classes + All the code related to the Database Connectivity
+
+class Flat
+{
+flatNo, Flat owner, Mobile , email, Aadhar ,Wing 
+}
+
+Passing Data from a Controller to View
+
+--ViewBag
+--ViewData
+--TempData
+--Models
+
+.cshtml 
+
+html-Pure HTml markup 
+cs- pure cSharp code 
+
+.cshtml (Combination of Html markup and server side code(CS)
+
+
+
+Dummy data - FlatRepository(CRUD)
+
+App --> SQL server DB --- SQLServerRepository(CRUD)
+
+App--->MySQL DB --- MySQLRepository (CRUD)
+
+
+Create an interface -Declare functioanlities 
+
+
+
+
+
+
+
+
+
+
