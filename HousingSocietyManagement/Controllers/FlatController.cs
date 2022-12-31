@@ -5,16 +5,24 @@ namespace HousingSocietyManagement.Controllers
 {
     public class FlatController : Controller
     {
-        HousingSocietyRepository repo;
+        DBHelper repo;
+        private readonly IConfiguration config;
+
+        public FlatController(IConfiguration config)
+        {
+            this.config = config;
+            DBHelper.conString = this.config.GetConnectionString("HousingSocietyDB");
+        }
+
         public IActionResult  Index()
         {
-            repo = new HousingSocietyRepository();
+            repo = new DBHelper();
             return View(repo.GetFlats());
         }
 
         public IActionResult GetFlatDetails(int flatNo)
         {
-            repo = new HousingSocietyRepository();
+            repo = new DBHelper();
           Flat flat=  repo.GetFlatById(flatNo);
             return View(flat);
         }
@@ -28,7 +36,7 @@ namespace HousingSocietyManagement.Controllers
         [HttpPost]
         public IActionResult CreateFlat(Flat flat)
         {
-            repo = new HousingSocietyRepository();
+            repo = new DBHelper();
             repo.AddNewFlat(flat);
             return RedirectToAction("Index");
         }
