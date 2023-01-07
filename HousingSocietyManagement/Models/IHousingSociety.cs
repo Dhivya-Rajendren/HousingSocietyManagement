@@ -7,5 +7,7 @@
 
         void AddNewFlat(Flat flat);
 
+        void DeleteFlat(int flatNo);
+
     }
 }

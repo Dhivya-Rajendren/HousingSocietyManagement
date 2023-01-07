@@ -23,5 +23,10 @@
         {
             flats.Add(flat);
         }
+
+        public void DeleteFlat(int flatNo)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

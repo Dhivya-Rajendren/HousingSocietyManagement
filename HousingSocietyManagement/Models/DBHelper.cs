@@ -21,6 +21,7 @@ namespace HousingSocietyManagement.Models
             string cmdText = "insert into tbl_Flats values(" + flat.FlatNo + ",'" + flat.FlatName + "','" + flat.FlatOwner + "','" + flat.Wing + "'," + flat.Mobile + "," + flat.Aadhar + ",'" + flat.Email + "')";
             com = new SqlCommand(cmdText, con);
             com.ExecuteNonQuery();
+            con.Close();
         }
 
         public Flat GetFlatById(int flatNo)
@@ -51,6 +52,16 @@ namespace HousingSocietyManagement.Models
             reader.Close();
             return _flats;
 
+        }
+
+        public void DeleteFlat(int flatNo)
+        {
+            con.Open();
+            string cmdText = "Delete from tbl_Flats where flatNo=" + flatNo;
+            com = new SqlCommand(cmdText, con);
+            com.ExecuteNonQuery();
+            con.Close();
+           
         }
     }
 }

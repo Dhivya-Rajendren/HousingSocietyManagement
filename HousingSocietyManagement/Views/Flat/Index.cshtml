@@ -6,30 +6,15 @@
 
 <a asp-action="CreateFlat" asp-controller="Flat" class="btn btn-secondary">New Flat</a>
 
-<div class="text-center m-5">
-<table class="table table-bordered bg-info w-25" >
-    <tr class="text-white">
-     <th>FlatName</th>
-        <th>Flat Owner</th>
-        
-        <th>Mobile</th>
-        
-    </tr>
-    @foreach(var item in Model)
+@{
+    ViewData["ViewName"] = "Index";
+}
+
+<div class="card-group">
+    
+    @foreach (var item in @Model)
     {
-        <tr class="text-white">
-            <td>
-             <a asp-action="GetFlatDetails" asp-controller="Flat" asp-route-flatNo=@item.FlatNo>  @item.FlatName</a> 
-            </td>
-            <td>
-                @item.FlatOwner
-            </td>
-          
-            <td>
-                @item.Mobile
-            </td>
-           
-        </tr>
+        <partial name="_FlatDetailsPartial" model=@item/>
     }
-</table>
+
 </div>

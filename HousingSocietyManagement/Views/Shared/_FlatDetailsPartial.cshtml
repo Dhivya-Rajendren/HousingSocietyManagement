@@ -1,0 +1,48 @@
+﻿@model HousingSocietyManagement.Models.Flat
+
+@{
+    var viewName = (string)ViewData["ViewName"];
+}
+
+
+
+<div class="card w-50">
+    <div class="card-header bg-primary">
+        <h3>Display the Details of : @Model.FlatName</h3>
+    </div>
+    <div class="card-body bg-light">
+        Flat Owner : @Model.FlatOwner<br/>
+        Wing   : @Model.Wing<br/>
+        Aadhar  : @Model.Aadhar<br/>
+        Email : @Model.Email<br/>
+        Contact : @Model.Mobile<br/>
+    </div>
+    @if(viewName.Equals("Details"))
+    {
+        <div class="card-footer">
+         <a asp-action="Index" class="btn  btn-primary">Back to Flats</a>           
+        
+        </div>
+    }
+    else if(viewName.Equals("Delete"))
+    {
+        <div class="card-footer">
+        <p>Are you confirm to delete the flat? 
+            <a asp-action="Yes" class="btn btn-sm btn-primary" asp-route-flatNo=@Model.FlatNo>Yes</a>
+            <a asp-action="Index" class="btn btn-sm btn-danger">No</a>           
+        
+        </p>
+        </div>
+    }
+    else if(viewName.Equals("Index"))
+    {
+        <div class="card-footer">
+                         <a asp-action="GetFlatDetails" asp-controller="Flat" asp-route-flatNo=@Model.FlatNo class="btn btn-danger">  View</a> 
+                 <a asp-action="DeleteFlat" asp-controller="Flat" asp-route-flatNo=@Model.FlatNo class="btn btn-info"> Delete</a> 
+
+            </div>
+
+    }
+
+
+    </div>
