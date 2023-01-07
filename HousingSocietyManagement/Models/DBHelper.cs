@@ -63,6 +63,15 @@ namespace HousingSocietyManagement.Models
             con.Close();
            
         }
+
+        public void EditFlat(int flatNo,string wing)
+        {
+            con.Open();
+            string cmdText = "Update tbl_Flats set wing='" + wing + "' where flatNo=" + flatNo;
+            com = new SqlCommand(cmdText, con);
+            com.ExecuteNonQuery();
+            con.Close();
+        }
     }
 }
 

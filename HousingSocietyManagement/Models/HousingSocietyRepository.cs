@@ -28,5 +28,10 @@
         {
             throw new NotImplementedException();
         }
+
+        public void EditFlat(int flatNo,string wing)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

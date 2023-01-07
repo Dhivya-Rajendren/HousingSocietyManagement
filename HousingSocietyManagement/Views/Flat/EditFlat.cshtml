@@ -1,0 +1,46 @@
+﻿@model HousingSocietyManagement.Models.Flat
+
+<form method="post"  asp-action="EditFlat"> 
+
+    <div class="w-25">
+       <div class="form-group">
+    <label>Flat Number : </label>
+    <input  class="form-control" asp-for=FlatNo  id="txtFlatNo">
+  </div>
+  <div class="form-group">
+
+    <label>Flat Name : </label>
+    <input  class="form-control"  asp-for=FlatName id="txtFlatName">
+  </div>
+
+   <div class="form-group">
+    <label>Flat Owner : </label>
+    <input  class="form-control" asp-for=FlatOwner id="txtFlatOwner">
+  </div>
+
+   <div class="form-group">
+    <label>Wing : </label>
+    <input  class="form-control" asp-for=Wing id="txtWing">
+  </div>
+
+   <div class="form-group">
+    <label>Mobile: </label>
+    <input  class="form-control" asp-for=Mobile id="txtMobile">
+  </div>
+
+   <div class="form-group">
+    <label>Aadhar : </label>
+    <input  class="form-control" asp-for=Aadhar id="txtAadhar">
+  </div>
+
+   <div class="form-group">
+    <label>Email : </label>
+    <input  class="form-control" asp-for=Email id="txtEmail">
+  </div>
+
+  <br/>
+  <input type="submit"  class="btn btn-primary" value="Update Details" />
+ 
+
+  </div>
+  </form>

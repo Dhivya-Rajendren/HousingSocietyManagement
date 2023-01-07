@@ -20,6 +20,21 @@ namespace HousingSocietyManagement.Controllers
             return View(repo.GetFlats());
         }
 
+        public IActionResult EditFlat(int flatNo)
+        {
+            repo = new DBHelper();
+            Flat flat = repo.GetFlatById(flatNo);
+            return View(flat);
+        }
+
+        [HttpPost]
+        public IActionResult EditFlat(int flatNo, Flat flat)
+        {
+            repo = new DBHelper();
+            repo.EditFlat(flatNo, flat.Wing);
+            return RedirectToAction("Index");
+        }
+
         public IActionResult DeleteFlat(int flatNo)
         {
             repo = new DBHelper();

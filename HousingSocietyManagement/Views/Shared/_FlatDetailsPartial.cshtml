@@ -38,6 +38,7 @@
     {
         <div class="card-footer">
                          <a asp-action="GetFlatDetails" asp-controller="Flat" asp-route-flatNo=@Model.FlatNo class="btn btn-danger">  View</a> 
+                         <a asp-action="EditFlat" asp-controller="Flat" asp-route-flatNo=@Model.FlatNo class="btn btn-warning">Edit</a>
                  <a asp-action="DeleteFlat" asp-controller="Flat" asp-route-flatNo=@Model.FlatNo class="btn btn-info"> Delete</a> 
 
             </div>

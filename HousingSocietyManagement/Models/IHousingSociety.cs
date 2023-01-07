@@ -9,5 +9,7 @@
 
         void DeleteFlat(int flatNo);
 
+        void EditFlat(int flatNo,string wing);
+
     }
 }
