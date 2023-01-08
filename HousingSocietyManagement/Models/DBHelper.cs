@@ -72,6 +72,37 @@ namespace HousingSocietyManagement.Models
             com.ExecuteNonQuery();
             con.Close();
         }
+
+        public void AddMaintenanceType(Maintenance maintenance)
+        {
+            con.Open();
+            com = new SqlCommand("insert into tbl_Maintenance values('" + maintenance.Type + "')", con);
+            com.ExecuteNonQuery();
+            con.Close();
+        }
+
+        public List<Maintenance> GetAllMaintenance()
+        {
+            con.Open();
+            com = new SqlCommand("Select * from tbl_Maintenance", con);
+            reader = com.ExecuteReader();
+            List<Maintenance> maintenances = new List<Maintenance>();
+            while(reader.Read())
+            {
+                Maintenance maintenance = new Maintenance();
+                maintenance.Id = reader.GetInt32(0);
+                maintenance.Type = reader.GetString(1);
+                maintenances.Add(maintenance);
+            }
+            reader.Close();
+            con.Close();
+            return maintenances;
+        }
+
+        public Maintenance GetMaintenance(int maintenanceId)
+        {
+            return GetAllMaintenance().Find(m => m.Id == maintenanceId);
+        }
     }
 }
 

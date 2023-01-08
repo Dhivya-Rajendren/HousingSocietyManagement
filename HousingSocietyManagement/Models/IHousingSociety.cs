@@ -11,5 +11,9 @@
 
         void EditFlat(int flatNo,string wing);
 
+        void AddMaintenanceType(Maintenance maintenance);
+        List<Maintenance> GetAllMaintenance();
+        Maintenance GetMaintenance(int maintenanceId);
+
     }
 }

@@ -1,0 +1,6 @@
+﻿@model HousingSocietyManagement.Models.Maintenance
+
+
+@await Component.InvokeAsync("Maintenance",new {maintenanceId=@Model.Id,viewName="GetDetails"})
+
+

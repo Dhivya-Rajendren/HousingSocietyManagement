@@ -1,0 +1,27 @@
+﻿@model HousingSocietyManagement.Models.Maintenance
+
+@{
+    string viewName = (string)ViewData["ViewName"];
+}
+
+<table class="table table-bordered w-25">
+
+<tr>
+    <th>Sno</th>
+    <th>Maintenance Nature</th>
+</tr>
+
+<tr>
+    <td>@Model.Id</td>
+    <td>@Model.Type</td>
+</tr>
+</table>
+
+@if(viewName.Equals("GetDetails"))
+{
+    <a asp-action="Index" class="btn btn-primary">Back To Maintenance</a>
+}
+else
+{
+    <a asp-action="DeleteM" class="btn btn-danger">Delete</a>
+}

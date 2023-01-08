@@ -33,5 +33,20 @@
         {
             throw new NotImplementedException();
         }
+
+        public void AddMaintenanceType(Maintenance maintenance)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Maintenance> GetAllMaintenance()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Maintenance GetMaintenance(int maintenanceId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
