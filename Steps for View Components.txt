@@ -1,0 +1,22 @@
+Create Maintenance table
+
+create a Maintenance Model class in Models
+
+Add a three methods in IHousingREpository
+
+implement the methods in DbHelper
+
+Create the Maintenance controller
+Create a Index View
+
+Add a menu link in Layout view
+
+Create GetDetails and Delete View
+
+Create a Folder ViewComponents
+Create a Class for ViewComponent 
+
+Create a Folder shared/Components/name of ViewComponent/Default.cshtml
+
+
+Call the component in GetDetails and Delete Views 
